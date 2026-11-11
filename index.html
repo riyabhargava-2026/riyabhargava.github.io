@@ -525,14 +525,28 @@ html.dz .polas{display:contents}
 html.dz body{overflow:hidden}
 html.dz .win{left:24px!important;right:24px!important;top:46px!important;bottom:92px!important;width:auto!important;height:auto!important}
 html.dz .bar{cursor:default}
+html.dz .hero{width:min(1100px,92vw)}
+html.dz .hero{top:44%}
+html.dz .hero h1{font-size:185px!important}
+html.dz .hero .meta{width:740px;font-size:23px;margin-top:16px}
+html.dz .hero .hint{font-size:15px;margin-top:22px}
 /* sideways phone: photos tucked into free corners so they never cover the title */
 html.dz .pic{width:84px!important;transform:none}
 html.dz .pic span{font-size:9.5px}
-html.dz .pic:nth-child(1){left:13%!important;top:calc(34px + 5%)!important;rotate:-3deg}
-html.dz .pic:nth-child(2){left:3%!important;top:56%!important;rotate:2deg}
-html.dz .pic:nth-child(3){left:45%!important;top:calc(34px + 3%)!important;rotate:-2deg}
-html.dz .pic:nth-child(4){left:56%!important;top:calc(34px + 5%)!important;rotate:3deg}
-html.dz .pic:nth-child(5){left:84%!important;top:30%!important;rotate:-2deg}
+html.dz .pic:nth-child(1){left:10.5%!important;top:calc(34px + 3%)!important;rotate:-3deg}
+html.dz .pic:nth-child(2){left:10.5%!important;top:44%!important;rotate:2deg}
+html.dz .pic:nth-child(3){left:81%!important;top:calc(34px + 3%)!important;rotate:2deg}
+html.dz .pic:nth-child(4){left:81%!important;top:44%!important;rotate:-2deg}
+html.dz .pic:nth-child(5){left:73%!important;top:73%!important;rotate:3deg}
+html.dz .icon[data-open=resume]{left:1.5%!important;right:auto!important;top:4%!important}
+html.dz .icon[data-open=gff-stall]{left:1.5%!important;right:auto!important;top:30%!important}
+html.dz .icon[data-open=print]{left:1.5%!important;right:auto!important;top:56%!important}
+html.dz .icon[data-open=contact]{left:91%!important;right:auto!important;top:4%!important}
+html.dz .icon[data-open=campaign]{left:91%!important;right:auto!important;top:30%!important}
+html.dz .icon[data-open=about]{left:91%!important;right:auto!important;top:56%!important}
+html.dz .icon[data-open=switch4]{left:19%!important;right:auto!important;top:75%!important}
+html.dz .icon[data-open=bombae]{left:27.5%!important;right:auto!important;top:75%!important}
+html.dz .icon[data-open=boat]{left:64%!important;right:auto!important;top:75%!important}
 </style>
 </head>
 <body>
@@ -845,28 +859,19 @@ if(!matchMedia("(prefers-reduced-motion:reduce)").matches){
     photoEl.style.transform=`translate(${dx}px,${dy}px)`; $("#glow").style.transform=`translate(${-dx*2.2}px,${-dy*2.2}px)`; });
 }
 
-/* phones held sideways: show the real desktop layout, scaled to fit */
+/* phones held sideways: show the real desktop layout, scaled to fit (zoom works in every browser) */
 (function(){
-  const html=document.documentElement, meta=document.querySelector('meta[name="viewport"]');
-  const PHONE='width=device-width, initial-scale=1, viewport-fit=cover', DESK='width=1280, viewport-fit=cover';
-  function wantDesk(){
-    const land=innerWidth>innerHeight;
-    const short=Math.min(screen.width,screen.height,innerWidth*(parseFloat(html.style.zoom)||1),innerHeight*(parseFloat(html.style.zoom)||1));
-    return matchMedia("(pointer:coarse)").matches && land && short<600;
-  }
-  function zoomOn(){ html.style.zoom=""; const z=Math.min(innerWidth/1280, innerHeight/600); html.style.zoom=z.toFixed(4); html.classList.add("dz"); }
-  function zoomOff(){ html.style.zoom=""; html.classList.remove("dz"); }
+  const html=document.documentElement;
   function fit(){
-    if(wantDesk()){
-      if(meta && meta.content!==DESK) meta.content=DESK;
-      setTimeout(()=>{ if(html.clientWidth<1100 || html.classList.contains("dz")) zoomOn(); },120);
-    } else {
-      zoomOff(); if(meta && meta.content!==PHONE) meta.content=PHONE;
-    }
+    html.style.zoom="";
+    const w=html.clientWidth, h=html.clientHeight;
+    const phoneLand=matchMedia("(pointer:coarse)").matches && w>h && h<600;
+    if(phoneLand){ html.style.zoom=Math.min(w/1280, h/600).toFixed(4); html.classList.add("dz"); }
+    else html.classList.remove("dz");
   }
   fit();
-  addEventListener("orientationchange",()=>setTimeout(fit,150));
-  addEventListener("resize",()=>{ clearTimeout(fit.t); fit.t=setTimeout(fit,120); });
+  addEventListener("orientationchange",()=>setTimeout(fit,200));
+  addEventListener("resize",()=>{ clearTimeout(fit.t); fit.t=setTimeout(fit,150); });
 })();
 /* rotate to landscape */
 (function(){
@@ -1366,7 +1371,7 @@ function openWin(id, replaceEl){
   const cfg = builders[id]();
   const el = document.createElement("div");
   el.className="win"; el.dataset.id=id; el.setAttribute("role","dialog"); el.setAttribute("aria-label",cfg.title);
-  const vw=document.documentElement.clientWidth, vh=document.documentElement.clientHeight;
+  const _Z=parseFloat(document.documentElement.style.zoom)||1, vw=document.documentElement.clientWidth/_Z, vh=document.documentElement.clientHeight/_Z;
   const dz=document.documentElement.classList.contains("dz");
   const w=Math.min(cfg.w, vw-(dz?60:40)), h=Math.min(cfg.h, vh-(dz?96:140));
   let x, y;
@@ -1415,10 +1420,10 @@ function drag(el, handle){
   handle.addEventListener("pointermove",e=>{
     if(!on) return;
     if(Math.abs(e.clientX-sx)+Math.abs(e.clientY-sy)>5) el.dataset.moved="1";
-    const Z=parseFloat(document.documentElement.style.zoom)||1, VW=document.documentElement.clientWidth, VH=document.documentElement.clientHeight;
+    const Z=parseFloat(document.documentElement.style.zoom)||1, VW=document.documentElement.clientWidth/Z, VH=document.documentElement.clientHeight/Z;
     const nx=Math.min(VW-80,Math.max(-el.offsetWidth+120,ox+(e.clientX-sx)/Z));
     const ny=Math.min(VH-60,Math.max(el.classList.contains("icon")?0:34,oy+(e.clientY-sy)/Z));
-    el.style.left=nx+"px"; el.style.top=ny+"px";
+    el.style.setProperty("left",nx+"px","important"); el.style.setProperty("top",ny+"px","important");
   });
   const end=()=>{on=false}; handle.addEventListener("pointerup",end); handle.addEventListener("pointercancel",end);
 }
