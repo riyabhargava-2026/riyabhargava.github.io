@@ -547,6 +547,65 @@ html.dz .icon[data-open=about]{left:91%!important;right:auto!important;top:56%!i
 html.dz .icon[data-open=switch4]{left:19%!important;right:auto!important;top:75%!important}
 html.dz .icon[data-open=bombae]{left:27.5%!important;right:auto!important;top:75%!important}
 html.dz .icon[data-open=boat]{left:64%!important;right:auto!important;top:75%!important}
+
+/* instagram phone mock-ups */
+.igp{display:block;width:100%;max-width:300px;min-width:190px;margin:0 auto;background:#111;border-radius:30px;padding:9px;box-shadow:0 24px 40px -22px rgba(0,40,50,.6)}
+.igp.story{max-width:250px}
+.igp-scr{position:relative;border-radius:22px;overflow:hidden;background:#fff;font-family:var(--sans)}
+.igp img{display:block;width:100%}
+.igp.feed .igp-scr{padding-top:22px}
+.igp.feed .igp-scr::before{content:"";position:absolute;top:7px;left:50%;width:60px;height:8px;border-radius:8px;background:#111;transform:translateX(-50%)}
+.igp-head{display:flex;align-items:center;gap:7px;padding:7px 10px;font-size:11px}
+.igp-head b{font-weight:600}
+.igp-head small{color:#888;font-size:10px}
+.igp-head em{margin-left:auto;font-style:normal;color:#555;font-size:10px}
+.igp .av{width:24px;height:24px;border-radius:50%;flex:none;background:linear-gradient(135deg,#0095ad,#c2d500);box-shadow:0 0 0 2px #fff,0 0 0 3.5px #e2559b}
+.igp-shop{display:flex;justify-content:space-between;padding:8px 10px;background:#0095ad;color:#fff;font-size:12px;font-weight:600}
+.igp-act{display:flex;gap:12px;padding:8px 10px 2px;font-size:16px}
+.igp-act .sv{margin-left:auto}
+.igp-capt{font-size:11px;line-height:1.4;padding:2px 10px 12px;margin:0;color:#222}
+.igp.story .igp-scr{aspect-ratio:9/16;background:#000}
+.igp.story .igp-scr>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.igp.story .igp-scr::before{content:"";position:absolute;inset:0 0 auto;height:64px;background:linear-gradient(rgba(0,0,0,.4),transparent);z-index:1;pointer-events:none}
+.igp-bars{position:absolute;top:8px;left:8px;right:8px;display:flex;gap:3px;z-index:2}
+.igp-bars i{flex:1;height:2.5px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden;position:relative}
+.igp-bars i.done{background:#fff}
+.igp-bars i.run::after{content:"";position:absolute;inset:0;background:#fff;transform-origin:left;animation:igRun 5s linear infinite}
+@keyframes igRun{from{transform:scaleX(0)}}
+.igp.story .igp-head{position:absolute;top:16px;left:0;right:0;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.5);z-index:2}
+.igp.story .igp-head small{color:#eee}
+.igp-cta{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);background:#fff;color:#111;font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px;box-shadow:0 4px 10px rgba(0,0,0,.3);white-space:nowrap;z-index:2}
+@media (max-width:820px){html:not(.dz) .sc-pair:has(.igp){grid-template-columns:1fr!important;justify-items:center}}
+.ph[style*="9/16"]:has(>video){max-width:min(100%,calc(62vh * 9 / 16));margin-left:auto;margin-right:auto}
+.ph>video{width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:820px){html:not(.dz) .sc-collage.cl-lumo,html:not(.dz) .sc-collage.cl-carousels{margin-top:56px}}
+
+/* folder of projects */
+.fd{padding:28px 30px 34px}
+.fd-head{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.fd-ico{width:54px;height:42px;flex:none;border-radius:6px;background:#ff5a1f;position:relative;box-shadow:0 8px 16px -8px rgba(255,90,31,.7)}
+.fd-ico::before{content:"";position:absolute;left:0;top:-7px;width:22px;height:10px;border-radius:5px 5px 0 0;background:#ff5a1f}
+.fd-head h2{font-family:var(--cond);text-transform:uppercase;font-weight:500;font-size:30px;letter-spacing:.02em;margin:0;line-height:1}
+.fd-head p{margin:6px 0 0;color:#555;font-size:14px}
+.fd-head small{margin-left:auto;font-family:var(--mono,monospace);font-size:12px;color:#777;white-space:nowrap}
+.fd-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fd-card{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;border-radius:16px;overflow:hidden;background:var(--bg);color:#fff;box-shadow:0 18px 34px -20px rgba(0,0,0,.55);transition:transform .25s,box-shadow .25s}
+.fd-card:hover,.fd-card:focus-visible{transform:translateY(-4px);box-shadow:0 26px 40px -20px rgba(0,0,0,.6)}
+.fd-card:focus-visible{outline:3px solid #ff5a1f;outline-offset:3px}
+.fd-art{position:relative;height:250px}
+.fd-art img{position:absolute;top:50%;width:34%;border-radius:8px;box-shadow:0 16px 26px -12px rgba(0,0,0,.6);transition:transform .35s}
+.fd-art .a0{left:8%;transform:translateY(-50%) rotate(-8deg)}
+.fd-art .a1{left:33%;width:36%;transform:translateY(-52%);z-index:2}
+.fd-art .a2{right:8%;transform:translateY(-50%) rotate(8deg)}
+.fd-card:hover .a0{transform:translateY(-50%) rotate(-12deg) translateX(-8px)}
+.fd-card:hover .a2{transform:translateY(-50%) rotate(12deg) translateX(8px)}
+.fd-info{padding:16px 20px 20px;background:rgba(0,0,0,.18);backdrop-filter:blur(6px);display:flex;flex-direction:column;gap:6px;flex:1}
+.fd-info small{font-family:var(--cond);text-transform:uppercase;letter-spacing:.14em;font-size:11px;opacity:.85}
+.fd-info b{font-family:var(--cond);text-transform:uppercase;font-weight:500;font-size:28px;line-height:1}
+.fd-tag{align-self:flex-start;background:#fff;color:#2b2b8f;font-weight:700;font-style:italic;font-size:13px;padding:3px 10px;border-radius:6px;transform:rotate(-2deg)}
+.fd-info p{margin:4px 0 0;font-size:13.5px;line-height:1.45;opacity:.92}
+.fd-info em{font-style:normal;font-weight:600;font-size:13px;margin-top:auto;padding-top:8px;color:var(--ink)}
+@media (max-width:820px){html:not(.dz) .fd{padding:20px 16px 26px}html:not(.dz) .fd-grid{grid-template-columns:1fr}html:not(.dz) .fd-art{height:210px}html:not(.dz) .fd-head h2{font-size:24px}html:not(.dz) .fd-head small{display:none}}
 </style>
 </head>
 <body>
@@ -648,10 +707,10 @@ const PROJECTS = [
       {src:"images/switch4-box-front.jpg", box3d:true, box:{mm:[80,25,160], tab:27, faces:{front:"images/switch4-box-front.jpg",back:"images/switch4-box-back.jpg",left:"images/switch4-box-left.jpg",right:"images/switch4-box-right.jpg",top:"images/switch4-box-top.jpg",bottom:"images/switch4-box-bottom.jpg",tab:"images/switch4-box-tab.png"}}, label:"Interactive 3D pack — drag to rotate", r:"16/10"},
       {src:"images/switch4-dieline.jpg", label:"Dieline with colour palette", r:"1400/1367"},
       {src:"images/switch4-uv-emboss.jpg", label:"Finishes — spot UV & emboss", r:"1400/1367"},
-      {src:"images/switch4-ad-cocoa-4x5.jpg", label:"Ad 01 · Plot twist — 4:5 feed", r:"4/5"},
-      {src:"images/switch4-ad-cocoa-9x16.jpg", label:"Ad 01 · Plot twist — 9:16 story", r:"9/16"},
-      {src:"images/switch4-ad-pivot-4x5.jpg", label:"Ad 02 · Your face isn’t flat — 4:5 feed", r:"4/5"},
-      {src:"images/switch4-ad-pivot-9x16.jpg", label:"Ad 02 · Your face isn’t flat — 9:16 story", r:"9/16"}
+      {src:"images/switch4-ad-cocoa-4x5.jpg", ig:"feed", caption:"Cocoa butter in a razor?! Here’s the twist 👀 #KhulKeKhel", label:"Ad 01 · Plot twist — 4:5 feed", r:"4/5"},
+      {src:"images/switch4-ad-cocoa-9x16.jpg", ig:"story", label:"Ad 01 · Plot twist — 9:16 story", r:"9/16"},
+      {src:"images/switch4-ad-pivot-4x5.jpg", ig:"feed", caption:"Your face isn’t flat. So this pivots. #KhulKeKhel", label:"Ad 02 · Your face isn’t flat — 4:5 feed", r:"4/5"},
+      {src:"images/switch4-ad-pivot-9x16.jpg", ig:"story", label:"Ad 02 · Your face isn’t flat — 9:16 story", r:"9/16"}
     ]
   },
   {
@@ -741,7 +800,14 @@ const PROJECTS = [
     outro:"You don’t just get what you need in minutes. You get your moment sorted in minutes."
   },
   {
-    id:"bombae", no:"05", short:"Bombae", color:"#ff5a1f",
+    id:"carousels", no:"05", short:"Carousels", color:"#ff5a1f", cover:"images/carousels-cover.jpg",
+    title:"Instagram carousels", pill:"Carousels | 2 projects", kind:"Social · Carousels",
+    lede:"Two Instagram carousels, two very different products. Pick one to open it.",
+    folder:["bombae","lumo"],
+    images:[{src:"images/bombae-1.jpg", label:"Bombae", r:"4/5"},{src:"images/lumo-1.jpg", label:"LUMO", r:"4/5"}]
+  },
+  {
+    id:"bombae", hidden:true, parent:"carousels", no:"05", short:"Bombae", color:"#ff5a1f",
     showcase:{bg:"#9b6bea", bg2:"#e58ccf", ink:"#f4f37a", kicker:"Bombae · Gloss Hair Straightener", title:"Meet Your New Bae", tagline:"It’s a Match ♥", fan:true, pattern:"plain",
       heroBg:"linear-gradient(135deg,#a98bf0 0%,#c79af0 45%,#f0a8d8 100%)", decor:`<span class="bb-heart"></span>`,
       collage:[{src:"images/bombae-2.jpg",cut:true,flat:true},{src:"images/bombae-1.jpg",cut:true,flat:true},{src:"images/bombae-5.jpg",cut:true,flat:true}],
@@ -803,20 +869,49 @@ const PROJECTS = [
     ]
   },
   {
-    id:"motion", hidden:true, no:"07", short:"Motion", color:"#ff5a1f",
-    title:"Motion work",
-    pill:"Motion | Reels + animated ads",
-    kind:"Motion", year:"DRAFT", role:"Animation & edit", tools:"After Effects",
-    tags:["Motion","After Effects"],
-    lede:"DRAFT — a short line on your motion pieces.",
-    story:{
-      About:"DRAFT — what these pieces are and what you animated.",
-      Craft:"DRAFT — timing, transitions, sound — what you focused on."
-    },
+    id:"lumo", hidden:true, parent:"carousels", no:"05", short:"LUMO", color:"#ff5a1f",
+    showcase:{bg:"#0a1430", bg2:"#2a62e6", ink:"#ff6a1a", kicker:"Portable power strip", title:"LUMO", tagline:"All in One.", fan:true, pattern:"plain",
+      heroBg:"radial-gradient(120% 90% at 30% 70%,#3d7bff 0%,#173a9a 38%,#070d22 80%)",
+      collage:[{src:"images/lumo-1.jpg",cut:true,flat:true},{src:"images/lumo-2.jpg",cut:true,flat:true},{src:"images/lumo-3.jpg",cut:true,flat:true}],
+      cards:[["The product","A portable power strip with dual AC sockets and multiple USB ports, made for travel and everyday use."],["The format","A 3-slide Instagram carousel (4:5): the hero, what’s inside, and the product out in the world."],["The look","Deep blue light, clean product renders, thin callout lines and one hit of orange for energy."]]},
+    title:"LUMO — Charge Everything",
+    pill:"LUMO | Instagram carousel",
+    kind:"Social · Carousel", year:"2026", role:"Concept, copy & design", tools:"Photoshop",
+    tags:["Product carousel","LUMO","Instagram"],
+    lede:"A three-slide product carousel for LUMO, an all-in-one power strip.",
+    intro:"Introduce LUMO on Instagram so its key features read in a single swipe: what it charges, how it’s built and where it fits in everyday life.",
+    sections:[
+      {layout:"full", fmt:"Instagram · Swipe it", title:"The carousel", imgs:[0], text:"Swipe through the post the way it plays on Instagram. Each slide does one job, so the story moves from “what is it” to “why trust it” to “take it anywhere”."},
+      {layout:"split", fmt:"Slide 1 · Hero", title:"Charge Everything. All in One.", imgs:[1], text:"The product sits in a pool of blue light with the headline on the left and an orange lightning bolt for energy. Three callouts (clean modern design, dual AC + multi USB, fast charging ready) explain it at a glance."},
+      {layout:"split-r", fmt:"Slide 2 · Inside", title:"Smart Power Management", imgs:[2], text:"An exploded view switches to a light background with an orange slash behind it, showing what’s inside: advanced circuit protection, pure copper conductivity, a heat-resistant build and a stable power-flow system, under the line “Minimal. Durable. Reliable.”"},
+      {layout:"split", fmt:"Slide 3 · Lifestyle", title:"Power Without Limits", imgs:[3], text:"Back to deep blue, LUMO hangs from a rail by its braided cable, with short benefit lines in the grid around it and a “Reliable Power Source” badge to close on trust."}
+    ],
     images:[
-      {label:"Motion reel", r:"16/9", wide:true, video:true},
-      {label:"Animated ad — 9:16", r:"9/16", video:true},
-      {label:"Animated ad — 4:5", r:"4/5", video:true}
+      {src:"images/lumo-1.jpg", carousel:true, handle:"lumo", slides:["images/lumo-1.jpg","images/lumo-2.jpg","images/lumo-3.jpg"], label:"Instagram carousel — swipe through", r:"4/5"},
+      {src:"images/lumo-1.jpg", label:"Slide 1 — Charge Everything", r:"693/864"},
+      {src:"images/lumo-2.jpg", label:"Slide 2 — Smart Power Management", r:"693/864"},
+      {src:"images/lumo-3.jpg", label:"Slide 3 — Power Without Limits", r:"693/864"}
+    ]
+  },
+  {
+    id:"motion", no:"07", short:"Motion", color:"#ff5a1f", cover:"images/motion-cover.jpg",
+    title:"Motion work",
+    pill:"Motion | Explainers + brand motion",
+    kind:"Motion graphics", year:"2026", role:"Design & animation", tools:"After Effects",
+    tags:["Motion","Explainer","Brand motion"],
+    lede:"Explainers, product ads and logo animations, built to make the message land in seconds.",
+    intro:"A mix of client work and personal pieces: two vertical explainers for Instantpay, plus a product ad and a logo animation for Blinkit.",
+    sections:[
+      {layout:"split", fmt:"Explainer · 9:16 · 45 sec", title:"Instantpay · Verify before you pay", imgs:[0], text:"A vertical explainer on why you should check a vendor’s GST number before paying them. It opens on an invoice that looks legitimate, asks “What if their GST number is fake?”, shows the risks, then walks through checking a GSTIN on the GST portal and decoding its 15 characters. Kinetic type carries the story, real UI keeps it practical, and it ends on one clear takeaway: “Protect every payment.”"},
+      {layout:"split-r", fmt:"Explainer · 9:16 · 57 sec", title:"Instantpay · Passport Verification API", imgs:[3], text:"Verifying a passport should take seconds, but manual document checks are slow and full of costly errors. The video sets up the passport as government-issued, globally recognised and tamper-resistant, says why checking it by hand doesn’t scale, then shows the Passport Verification API reading the details and stamping them “Verified”. It closes with a clear CTA: explore the API and start verifying smarter today."},
+      {layout:"split", fmt:"Product ad · 16:9 · 9 sec", title:"Blinkit · At your doorstep", imgs:[1], text:"A quick, punchy product spot. Hypnotic black-and-yellow rings pull you in, a box lands and bursts open with groceries, and the line cycles through grocery, pharmacy and pet care, all “at your doorstep in 9 minutes”, before resolving on the logo and “India’s Last Minute App”."},
+      {layout:"split-r", fmt:"Logo animation · 16:9 · 10 sec", title:"Blinkit · Logo reveal", imgs:[2], text:"A playful logo build. A pair of curious eyes watches a delivery scooter zip past, then turns into the dots of the wordmark as the letters drop, bounce and snap into place, finishing on the green “it”."}
+    ],
+    images:[
+      {src:"images/motion-gstin.mp4", poster:"images/motion-gstin.jpg", label:"Instantpay · GSTIN verification explainer (9:16)", r:"9/16", video:true},
+      {src:"images/motion-blinkit-ad.mp4", poster:"images/motion-blinkit-ad.jpg", label:"Blinkit · product ad (16:9)", r:"16/9", video:true},
+      {src:"images/motion-blinkit-logo.mp4", poster:"images/motion-blinkit-logo.jpg", label:"Blinkit · logo animation (16:9)", r:"16/9", video:true},
+      {src:"images/motion-passport.mp4", poster:"images/motion-passport.jpg", label:"Instantpay · Passport Verification API explainer (9:16)", r:"9/16", video:true}
     ]
   }
 ];
@@ -831,8 +926,9 @@ const ICONS = [
   {open:"gff-stall", type:"folder", x:3,  y:30},
   {open:"print",     type:"folder", x:18, y:40},
   {open:"campaign",  type:"folder", x:79, y:7},
-  {open:"bombae",    type:"folder", x:27, y:70},
+  {open:"carousels", type:"folder", x:27, y:70},
   {open:"boat",      type:"folder", x:66, y:72},
+  {open:"motion",    type:"folder", x:79, y:44},
   {open:"about",     type:"doc", name:"About me", ext:"TXT", x:91, y:62},
   {open:"resume",    type:"doc", name:"Resume", ext:"PDF", x:3, y:6, b:"#e2382b"},
   {open:"contact",   type:"doc", name:"Say hello", ext:"MAIL", x:91, y:6, b:"var(--accent)"}
@@ -918,12 +1014,19 @@ ICONS.forEach(ic=>{
 
 /* windows */
 const wins = new Map(); let z = 200; let cascade = 0;
+function igFrame(img){
+  const story=img.ig==="story";
+  return story
+   ? `<div class="igp story"><div class="igp-scr"><img src="${esc(img.src)}" alt="${esc(img.label)}" loading="lazy"><div class="igp-bars"><i class="done"></i><i class="run"></i><i></i></div><div class="igp-head"><span class="av"></span><b>bombayshavingcompany</b><small>Sponsored</small></div><div class="igp-cta">Shop now <span>›</span></div></div></div>`
+   : `<div class="igp feed"><div class="igp-scr"><div class="igp-head"><span class="av"></span><b>bombayshavingcompany</b><small>Sponsored</small><em>•••</em></div><img src="${esc(img.src)}" alt="${esc(img.label)}" loading="lazy"><div class="igp-shop">Shop now <span>›</span></div><div class="igp-act"><span>♡</span><span>💬</span><span>➤</span><span class="sv">⌑</span></div><p class="igp-capt"><b>bombayshavingcompany</b> ${esc(img.caption||"")}</p></div></div>`;
+}
 function placeholder(img, extra=""){
   if(img.fold) return foldHTML(img);
+  if(img.ig) return igFrame(img);
   if(img.box3d) return boxHTML(img);
   if(img.carousel) return carouselHTML(img);
   if(img.ba) return `<div class="ph" style="--r:1/1"><img src="${esc(img.ba[0].after)}" alt=""></div>`;
-  const media = img.src ? (img.video ? `<video src="${esc(img.src)}" muted loop playsinline autoplay></video>` : `<img src="${esc(img.src)}" alt="${esc(img.label)}" loading="lazy">`) : "";
+  const media = img.src ? (img.video ? `<video src="${esc(img.src)}" ${img.poster?`poster="${esc(img.poster)}"`:""} muted loop playsinline autoplay controls preload="metadata"></video>` : `<img src="${esc(img.src)}" alt="${esc(img.label)}" loading="lazy">`) : "";
   return `<div class="ph ${img.video&&!img.src?'video':''} ${extra}" style="--r:${img.r||'4/3'}">${media}${img.src?'':`<span>${esc(img.label)}</span>`}</div>`;
 }
 const draftify = s => esc(s).replace(/^DRAFT —/,'<span class="draft">DRAFT</span>');
@@ -936,7 +1039,7 @@ const builders = {
         <p class="sub">A selection of recent work across packaging, social ads, campaigns, print, stall and motion design.</p>
         <div class="grid">${PROJECTS.map(p=>`
           <button class="card" data-open="${p.id}">
-            ${placeholder({src:(p.images[0].box3d?"images/switch4-box-front.jpg":p.images[0].src),label:p.short,r:"4/3"},"cardimg")}
+            ${placeholder({src:(p.cover||(p.images[0].box3d?"images/switch4-box-front.jpg":(p.images[0].poster||p.images[0].src))),label:p.short,r:"4/3"},"cardimg")}
             <div class="row"><h3>${esc(p.short)}</h3><span class="n">${p.no}</span></div>
             <p>${esc(p.kind)}</p>
           </button>`).join("")}
@@ -1015,7 +1118,17 @@ const builders = {
 ALL_PROJECTS.forEach(p=>{
   builders[p.id]=()=>{
     const i=Math.max(0,PROJECTS.indexOf(p));
-    const nxt = PROJECTS[(i+1)%PROJECTS.length], prv = PROJECTS[(i-1+PROJECTS.length)%PROJECTS.length];
+    let nxt = PROJECTS[(i+1)%PROJECTS.length], prv = PROJECTS[(i-1+PROJECTS.length)%PROJECTS.length];
+    if(p.parent){ const par=ALL_PROJECTS.find(q=>q.id===p.parent), sib=par.folder; prv=par; nxt=ALL_PROJECTS.find(q=>q.id===sib[(sib.indexOf(p.id)+1)%sib.length]); }
+    if(p.folder){
+      const kids=p.folder.map(id=>ALL_PROJECTS.find(q=>q.id===id));
+      return {title:p.pill, w:1060, h:700, project:{prv:prv.id,nxt:nxt.id}, html:`<div class="fd">
+        <div class="fd-head"><span class="fd-ico"></span><div><h2>${esc(p.title)}</h2><p>${esc(p.lede)}</p></div><small>${kids.length} projects</small></div>
+        <div class="fd-grid">${kids.map(k=>{const sc=k.showcase||{};return `<button type="button" class="fd-card" data-open="${k.id}" data-replace style="--bg:${sc.heroBg||sc.bg};--ink:${sc.ink||"#fff"}">
+          <div class="fd-art">${(sc.collage||[]).map((c,j)=>`<img class="a${j}" src="${esc(c.src||k.images[c].src)}" alt="">`).join("")}</div>
+          <div class="fd-info"><small>${esc(sc.kicker||k.kind)}</small><b>${esc(sc.title||k.short)}</b><span class="fd-tag">${esc(sc.tagline||"")}</span><p>${esc(k.lede)}</p><em>Open project →</em></div>
+        </button>`}).join("")}</div></div>`};
+    }
     let secs=p.sections, intro=p.intro;
     if(!secs){ /* auto-pair story text with images until real content is added */
       const entries=Object.entries(p.story||{}); if(entries[0]&&entries[0][0]==="Brief"){ intro=entries.shift()[1]; }
@@ -1051,7 +1164,7 @@ ALL_PROJECTS.forEach(p=>{
       }).join("");
       return {title:p.pill, w:1060, h:700, project:{prv:prv.id,nxt:nxt.id}, html:`
       <div class="case sc" style="--sc-bg:${sc.bg};--sc-bg2:${sc.bg2};--sc-ink:${sc.ink}">
-        <aside class="rail">${p.images.map((im,k)=>`<button data-jump="${k}" aria-label="${esc(im.label)}">${placeholder({...im,fold:false,box3d:false,carousel:false,r:im.fold?"3/4":im.box3d?"1/2":im.r})}</button>`).join("")}</aside>
+        <aside class="rail">${p.images.map((im,k)=>`<button data-jump="${k}" aria-label="${esc(im.label)}">${placeholder({...im,...(im.video&&im.poster?{video:false,src:im.poster}:{}),fold:false,box3d:false,carousel:false,ig:false,r:im.fold?"3/4":im.box3d?"1/2":im.r})}</button>`).join("")}</aside>
         <div class="main sc-main">
           <header class="sc-hero ${sc.glow?"glow":""} ${sc.pattern?"pat-"+sc.pattern:""}" style="${sc.heroBg?`background:${sc.heroBg}`:""}">${sc.vtext?`<span class="sc-vtext">${esc(sc.vtext)}</span>`:""}${sc.decor||""}${sc.finger?`<span class="sc-finger"></span><span class="sc-chip c1"><b>✓</b>Bank account verified</span><span class="sc-chip c2"><b>✓</b>KYC complete</span>`:""}${sc.glow?`<i class="sc-light"></i><i class="sc-streaks"><b></b><b></b><b></b><b></b><b></b><b></b><b></b></i>`:""}
             <div class="sc-hero-copy">
@@ -1061,7 +1174,7 @@ ALL_PROJECTS.forEach(p=>{
               ${sc.minimal?"":`<p class="sc-lede">${draftify(p.lede)}</p>`}
               ${p.stats&&!(p.showcase&&p.showcase.single)?`<div class="sc-stats">${p.stats.map(([n,l])=>`<div><b>${esc(n)}</b><span>${esc(l)}</span></div>`).join("")}</div>`:""}
             </div>
-            ${sc.shelf?`<div class="bt-stack">${sc.shelf.map((b,i)=>`<img src="${esc(b.src)}" alt="" style="left:${b.x}%;bottom:${b.y}%;width:${b.w}%;aspect-ratio:${b.r};transform:rotate(${b.t||0}deg);--d:${i*90}ms">`).join("")}</div>`:""}<div class="sc-collage ${sc.fan?"fan":""} ${sc.single?"single":""}" ${sc.shelf?'hidden':''}>${sc.collage.map((k,j)=>typeof k==="object"?`<div class="c c${j} cut ${k.card||k.flat?"flat":""} ${k.flat&&!k.card?"wide":""}"><img src="${esc(k.src)}" alt=""></div>`:`<div class="c c${j}">${placeholder(p.images[k])}</div>`).join("")}</div>
+            ${sc.shelf?`<div class="bt-stack">${sc.shelf.map((b,i)=>`<img src="${esc(b.src)}" alt="" style="left:${b.x}%;bottom:${b.y}%;width:${b.w}%;aspect-ratio:${b.r};transform:rotate(${b.t||0}deg);--d:${i*90}ms">`).join("")}</div>`:""}<div class="sc-collage cl-${p.id} ${sc.fan?"fan":""} ${sc.single?"single":""}" ${sc.shelf?'hidden':''}>${sc.collage.map((k,j)=>typeof k==="object"?`<div class="c c${j} cut ${k.card||k.flat?"flat":""} ${k.flat&&!k.card?"wide":""}"><img src="${esc(k.src)}" alt=""></div>`:`<div class="c c${j}">${placeholder({...p.images[k],ig:false})}</div>`).join("")}</div>
           </header>
           <div class="sc-body">
             <div class="facts">
@@ -1084,7 +1197,7 @@ ALL_PROJECTS.forEach(p=>{
     }
     return {title:p.pill, w:1060, h:700, project:{prv:prv.id,nxt:nxt.id}, html:`
       <div class="case">
-        <aside class="rail">${p.images.map((im,k)=>`<button data-jump="${k}" aria-label="${esc(im.label)}">${placeholder({...im,fold:false,box3d:false,carousel:false,r:im.fold?"3/4":im.box3d?"1/2":im.r})}</button>`).join("")}</aside>
+        <aside class="rail">${p.images.map((im,k)=>`<button data-jump="${k}" aria-label="${esc(im.label)}">${placeholder({...im,...(im.video&&im.poster?{video:false,src:im.poster}:{}),fold:false,box3d:false,carousel:false,ig:false,r:im.fold?"3/4":im.box3d?"1/2":im.r})}</button>`).join("")}</aside>
         <div class="main">
           <div class="tagrow">${p.tags.map((t,k)=>`<span class="tag ${k===0?'hot':''}">${esc(t)}</span>`).join("")}</div>
           <h2>${esc(p.title)}</h2>
